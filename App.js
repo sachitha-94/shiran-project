@@ -196,7 +196,7 @@ export default function App() {
                 textAlign: "center",
               }}
             >
-              Take picture
+             TAKE A PICTURE
             </Text>
           </TouchableOpacity>
         </View>
