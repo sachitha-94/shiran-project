@@ -1,6 +1,12 @@
-import { View, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 export default function App() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  const screenOnClick = () => {
+    setCurrentTime(new Date());
+  };
   return (
     <View
       style={{
@@ -9,7 +15,17 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text>Universal React with Expo</Text>
+      <TouchableOpacity
+        onPress={screenOnClick}
+        style={{
+          alignItems: "center",
+          backgroundColor: "#DDDDDD",
+          padding: 100,
+        }}
+      >
+        <Text>Current Time is: ( Press here)</Text>
+        <Text>{currentTime.toISOString()}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
